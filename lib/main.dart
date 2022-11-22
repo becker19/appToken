@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sesion9mod/providers/provider_login.dart';
 import 'package:sesion9mod/providers/provider_theme.dart';
 import 'package:sesion9mod/routes/route.dart';
-
 import 'package:sesion9mod/share_prefences/preferences.dart';
 
 void main() async {
@@ -12,6 +12,9 @@ void main() async {
     MultiProvider(providers: [
       ChangeNotifierProvider(
         create: (_) => ProviderTheme(isDarkMode: Preferences.theme),
+      ),
+      ChangeNotifierProvider(
+        create: (_) => ProviderLogin(),
       ),
     ], child: const MyApp()),
   );
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
 
       // initialRoute: HomeScreen.routerName,
       onGenerateRoute: MyRoutes.generateRoute,
-      initialRoute: MyRoutes.rHOME,
+      initialRoute: MyRoutes.rLOGIN,
       // routes: {
       //   HomeScreen.routerName: (_) => const HomeScreen(),
       //   AjusteScreen.routerName: (_) => const AjusteScreen(),

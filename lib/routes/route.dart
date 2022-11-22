@@ -6,7 +6,7 @@ class MyRoutes {
   static const String rHOME = '/inicio';
   static const String rAJUSTES = '/ajuste';
   static const String rPERFIL = '/perfil';
-  static const String rDRAWER = '/drawer';
+  static const String rLOGIN = '/login';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -16,17 +16,11 @@ class MyRoutes {
         return MaterialPageRoute(builder: (_) => const AjusteScreen());
       case ('/perfil'):
         return MaterialPageRoute(builder: (_) => const PerfilScreen());
-      // case ('/drawer'):
-      //   return MaterialPageRoute(builder: (_) => const CustomDrawerWidget());
+      case ('/login'):
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
+
       default:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-      // return MaterialPageRoute(
-      //   builder: (_) => const Scaffold(
-      //     body: Center(
-      //       child: Text('No se encuentra Ruta'),
-      //     ),
-      //   ),
-      // );
     }
   }
 }
